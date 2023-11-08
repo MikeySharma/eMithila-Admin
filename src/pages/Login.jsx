@@ -39,6 +39,9 @@ const Login = () => {
 
         <div className="my-5 w-1/4 rounded-md overflow-hidden p-5 bg-white mx-auto">
           <form className="flex flex-col  gap-1" action="" onSubmit={formik.handleSubmit}>
+          {
+            isLoading && <div className="my-2 text-md font-medium text-center">Please wait</div>
+          }
             <h4 className='text-xl text-center font-medium'>Login</h4>
             <h6 className='text-sm text-center font-normal'>Login to your account to continue</h6>
             <div className="error text-center">
