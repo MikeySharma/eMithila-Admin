@@ -1,0 +1,28 @@
+/*Login Starts here*/
+.input-outline:focus{
+  outline: none;
+}
+.error{
+  color: red;
+  font-size: 12px;
+}
+/*Login Ends Here*/
+/*mulitple select dropdown*/
+.chip{
+  background: gray !important;
+}
+.highlightOption{
+background: #fff !important;
+color: #000 !important;
+}
+.multiSelectContainer li:hover{
+  background: gray !important;
+  color: #fff !important;
+}
+/*multiple select dropdown ends here*/
+
+/*Modal starts here*/
+.ant-btn-primary{
+  background-color: #1677ff !important;
+}
+/*Modal Ends Here*/
