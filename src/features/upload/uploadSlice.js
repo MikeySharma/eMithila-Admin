@@ -13,14 +13,14 @@ export const uploadImg = createAsyncThunk('upload/img', async (data, thunkAPI) =
     }
 })
 
-export const uploadBlogImg = createAsyncThunk('upload/blogImg', async(data, thunkAPI)=>{
-    try{
+export const uploadBlogImg = createAsyncThunk('upload/blogImg', async (data, thunkAPI) => {
+    try {
         const formData = new FormData();
-        data.forEach((elem)=>{
+        data.forEach((elem) => {
             formData.append("images", elem);
         })
         return await uploadService.uploadBlogImg(formData);
-    }catch(error){
+    } catch (error) {
         return thunkAPI.rejectWithValue(error);
     }
 })
@@ -52,7 +52,7 @@ const uploadSlice = createSlice({
             .addCase(uploadImg.pending, (state) => {
                 state.isLoading = true;
                 state.isSuccess = false;
-            state.isError = false;
+                state.isError = false;
             })
             .addCase(uploadImg.fulfilled, (state, action) => {
                 state.isLoading = false;
@@ -68,19 +68,19 @@ const uploadSlice = createSlice({
                 state.productImages = null;
                 state.message = action.error;
             })
-            .addCase(uploadBlogImg.pending, (state)=>{
+            .addCase(uploadBlogImg.pending, (state) => {
                 state.isLoading = true;
                 state.isSuccess = false;
-            state.isError = false;
+                state.isError = false;
             })
-            .addCase(uploadBlogImg.fulfilled, (state,action)=>{
+            .addCase(uploadBlogImg.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isError = false;
                 state.isSuccess = true;
                 state.blogImages = action.payload;
                 state.message = 'success';
             })
-            .addCase(uploadBlogImg.rejected, (state,action)=>{
+            .addCase(uploadBlogImg.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
                 state.isSuccess = false;
@@ -90,7 +90,7 @@ const uploadSlice = createSlice({
             .addCase(deleteImg.pending, (state) => {
                 state.isLoading = true;
                 state.isSuccess = false;
-            state.isError = false;
+                state.isError = false;
             })
             .addCase(deleteImg.fulfilled, (state, action) => {
                 state.isLoading = false;
@@ -101,7 +101,7 @@ const uploadSlice = createSlice({
                 state.blogImages = null;
 
             })
-            .addCase(deleteImg.rejected, (state,action)=>{
+            .addCase(deleteImg.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = false;
                 state.isError = true;
